@@ -1,4 +1,5 @@
-export function convertGSTTToSRT(string: string) {
+export function convertGSTTToSRT(string: string, options: { MAX_WORDS_COUNT_IN_1_LINE: number } = { MAX_WORDS_COUNT_IN_1_LINE: 10 }) {
+    const MAX_WORDS_COUNT_IN_1_LINE = options.MAX_WORDS_COUNT_IN_1_LINE || 10;
 
     class hourRepresentation {
         private hours: number;
@@ -59,7 +60,6 @@ export function convertGSTTToSRT(string: string) {
         return lines;
     }
 
-    const MAX_WORDS_COUNT_IN_1_LINE = 14;
     var obj = JSON.parse(string);
     var i = 1;
     var result = '';
